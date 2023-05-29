@@ -1,6 +1,5 @@
 import { styled } from "@/styles/stitches.config";
 import { Flex, Container } from "@/styles/Global";
-import { Button } from "@/styles/Buttons";
 
 export const Navbar = styled("nav", {
   background: "$grey0",
@@ -26,17 +25,25 @@ export const LogoTipo = styled(Flex, {
   alignItems: "center",
 });
 
-export const LogoTipoText = styled("span", {
-  fontSize: "1.25rem",
-  fontWeight: 600,
-  color: "$grey4",
-  fontFamily: '"IBM Plex Sans"',
+export const LogoTipoImg = styled("img", {
+  maxHeight: "4rem",
   "@mobile": {
-    fontSize: "1rem",
+    maxHeight: "3rem",
   },
 });
 
 export const NavbarLinks = styled(Flex, {
+  "a": {
+    textDecoration: "underline",
+    textDecorationColor: "$grey0",
+    textDecorationThickness: "3px",
+    "&:hover": {
+      scale: 1.1,
+      transition: ".4s",
+      fontWeight: "bold",
+      textDecorationColor: "$brand1",
+    }
+  },
   "@mobile": {
     marginTop: "$3",
     flexDirection: "column",
@@ -52,4 +59,10 @@ export const NavbarLinks = styled(Flex, {
 export const NavbarMobileArea = styled("div", {
   display: "flex",
   justifyContent: "space-between",
+  "button": {
+    "&:hover": {
+      transition: ".4s",
+      filter: "brightness(1.75)"
+    }
+  }
 });

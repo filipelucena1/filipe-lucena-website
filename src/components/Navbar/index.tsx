@@ -5,7 +5,7 @@ import { userData } from "@/utils/userData";
 import {
   Navbar as NavbarWrapper,
   LogoTipo,
-  LogoTipoText,
+  LogoTipoImg,
   NavbarLinks,
   NavbarMobileArea,
 } from "./style";
@@ -14,6 +14,8 @@ import { FaBars } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 import { Button } from "@/styles/Buttons";
 import { Container, Flex } from "@/styles/Global";
+
+import logo from "../../assets/img/Logo-horizontal-sem-fundo.png"
 
 export interface MenuButtonOpen {
   open: Boolean;
@@ -37,7 +39,7 @@ export const NavBar = (): JSX.Element => {
       <Container>
         <NavbarMobileArea>
           <LogoTipo>
-            <LogoTipoText>{userData.nameUser}</LogoTipoText>
+            <LogoTipoImg src={logo}/>
           </LogoTipo>
           {isWide && (
             <Button
